@@ -360,6 +360,7 @@ div.bn-controller .button:focus:after {
 /* Footer */
 
 #footer {
+	font-family:"NotoSansCJKkr-Thin";
 	text-align: center;
 	padding: 4em 0 4em 0;
 }
@@ -368,9 +369,9 @@ div.bn-controller .button:focus:after {
 		content: '';
 		border-top: solid 1px rgba(255, 255, 255, 0.25);
 		width: 10em;
-		display: block;
+		display: none;
 		margin: 0 auto 3em auto;
-		font-family:"NotoSansCJKkr-Thin";
+
 	}
 
 	@media screen and (max-width: 1280px) {

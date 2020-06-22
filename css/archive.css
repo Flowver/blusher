@@ -1,12 +1,8 @@
-@charset "UTF-8";
-@import url(font-awesome.min.css);
+*{
+	box-string: border-box;
+	margin:0; padding: 0;
+}
 @import url("http://fonts.googleapis.com/css?family=Source+Sans+Pro:200");
-
-/*
-	Visualize by TEMPLATED
-	templated.co @templatedco
-	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
-*/
 
 /* Reset */
 
@@ -48,7 +44,7 @@
 	body {
 		-webkit-text-size-adjust: none;
 	}
-
+	
 /* Box Model */
 
 	*, *:before, *:after {
@@ -56,7 +52,7 @@
 		-webkit-box-sizing: border-box;
 		box-sizing: border-box;
 	}
-
+	
 /* Grid */
 
 	.row {
@@ -1389,9 +1385,52 @@
 		}
 
 	}
+	
+/* Basic */	
 
-/* Basic */
+/* Semantic 영역 기본설정 */
+	#wrapper {width: 1600px; margin: 0 auto;}
+	header {width: 1600px; height: 170px; background: rgba(0,0,0,0);}
+	section {clear: both; float: center; position: relative;  width: 1600px; height: 1200px; background: rgba(0,0,0,0);}
+	footer {clear: both; width: 1600px; height: 50px; background: rgba(0,0,0,0);}
 
+/* 미디어 쿼리 */
+/* 화면 너비 0 ~ 1200px */
+	@media (max-width: 1600px){
+	#wrapper {width: 95%;}
+	header {width: 100%;}
+	section {width: 100%;}
+	footer {width: 100%;}
+	}
+
+/* 화면 너비 0 ~ 768px */
+	@media (max-width: 768px){
+	#wrapper {width: 100%;}
+	section {width: 100%; height: 300px;}
+	}
+
+	@media (max-width: 850px){
+	/* To display one link in a row */
+	.topnavbar ul{display:block}
+	/* Display the menu icon */
+	.topnavbar label{display:inline-flex;}
+	/* Looks good while hovering */
+	.topnavbar a{display:block;}
+	/* Hide the links until the menu icon is clicked */
+	.nav-items{max-height:0;}
+	/* Display links */
+	input:checked ~ .nav-items{max-height:100%;}
+
+	}
+
+/* 화면 너비 0 ~ 480px */
+	@media (max-width: 480px){
+	#wrapper {width: 100%;}
+	header {height: 100%;}
+	
+ {float: none; width: 100%; height: 200px;}
+	}	
+	
 	@-ms-viewport {
 		width: device-width;
 	}
@@ -1401,20 +1440,18 @@
 	}
 
 	@media screen and (max-width: 480px) {
-
 		html, body {
 			min-width: 320px;
 		}
-
 	}
 
-	body {
-		background-color: #000;
-		background-image: url("../images/bg.jpg");
-		background-size: cover;
-		background-position: top center;
-	}
 
+	body{font-family:SourceHanSerif-Medium;
+		background-image:url("../images/pink.png");
+		background-repeat : no-repeat;
+		background-size : cover;
+		background-position: top center
+	}
 		body.is-loading *, body.is-loading *:before, body.is-loading *:after {
 			-moz-animation: none !important;
 			-webkit-animation: none !important;
@@ -1425,7 +1462,7 @@
 			-ms-transition: none !important;
 			transition: none !important;
 		}
-
+		
 /* Type */
 
 	body, input, select, textarea {
@@ -1603,14 +1640,13 @@
 
 	.align-right {
 		text-align: right;
-	}
-
+	}		
 /* Section/Article */
 
 	section.special, article.special {
 		text-align: center;
 	}
-
+	
 	header p {
 		color: rgba(255, 255, 255, 0.35);
 		position: relative;
@@ -1752,7 +1788,7 @@
 			text-decoration: none;
 			color: rgba(255, 255, 255, 0.65);
 			cursor: pointer;
-			display: inline-block;
+			display: none; /*inline-block*/
 			font-size: 1em;
 			font-weight: 200;
 			padding-left: 2.4em;
@@ -2553,8 +2589,6 @@
 /* Wrapper */
 
 	#wrapper {
-		max-width: 68em;
-		width: 100%;
 		margin: 0 auto;
 		padding: 0 2em;
 		opacity: 1;
@@ -2579,54 +2613,146 @@
 		-ms-filter: blur(3px);
 		filter: blur(3px);
 	}
+	
 
-/* Header */
-
-	#header {
-		text-align: center;
-		padding: 6em 0 4em 0;
+		
+	header{
+		height:85px;
+		font-family:Sandblast;
+		position: relative;
+		width: 100%;
+		z-index: 9999;
+		text-align: left;
+		background: rgba(0,0,0,0);
 	}
 
-		#header h1 {
-			color: rgba(255, 255, 255, 0.65);
+
+	.header img{
+		width:150px;
+		height: 70px;
+		margin-left:auto;
+		margin-right:auto;
+	}
+
+	.logo{
+		/* border: 2px solid red; */
+		width: 300px; height: 100px;
+		background: url("../images/logo.png") no-repeat;
+		background-size: contain;
+		margin-top:5px;
+		line-height:75px;
+		float: left;
+	}
+
+/* 페이드인 효과 */
+	.fadein {
+		animation: fadein 2.5s ease-out forwards;
+	}
+
+	@keyframes fadein {
+		from {
+			opacity:0;
 		}
-
-		#header .avatar {
-			border-radius: 100%;
-			display: inline-block;
-			margin: 0 0 2em 0;
-			padding: 0.5em;
-			border: solid 1px rgba(255, 255, 255, 0.25);
-			background-color: rgba(255, 255, 255, 0.075);
+		to {
+			opacity:1;
 		}
+	}
 
-			#header .avatar img {
-				border-radius: 100%;
-				display: block;
-				width: 10em;
-			}
-
-		@media screen and (max-width: 1280px) {
-
-			#header {
-				padding: 4em 0 2em 0;
-			}
-
+	.fadeout {
+		animation: fadeout 2.5s ease-out forwards;
+	}
+	@keyframes fadeout {
+		from {
+			opacity:1;
 		}
+		to {
+			opacity:0;
+		}
+	}
+
+
+	
+/* Top-Navigation 영역 */
+	.active{
+		color:black;
+	}
+
+	.topnavbar{
+		/* border: 2px solid red; */
+		font-family:"NotoSansCJKkr-Medium";
+		letter-spacing: -1.5px;
+		background-color:rgba(255,255,255,0);
+		float: right;
+	}
+
+	.topnavbar ul{
+		padding:0px;
+		margin:0;
+		display:flex;
+		list-style-type:none;
+	}
+
+	.topnavbar a{
+		display:inline-flex;
+		text-decoration:none;
+		background-color:rgba(255,255,255,0);
+		padding: 10px 35px;
+		line-height:60px;
+	}
+
+/* 네비게이션 아이템 */
+	.nav-items{
+		text-align:center;
+		overflow:hidden;
+		clear:both;
+		transition: 0.3s ease;
+	}
+
+	.nav-items a:hover{
+		background-color:#ffffff;
+		color:black;
+		transition: 0.3s ease;
+	}
+
+	/* 체크박스 숨기기 */
+	input#menu-icon-input{
+		display:none;
+	}
+
+	/* 체크박스 */
+	.topnavbar label{
+		padding:10px 20px;
+		float:right;
+		font-size:2rem;
+		color:#EED6D6;
+		display:none;
+		cursor:pointer;
+		transition:0.3s ease;
+		
+	}
+
+	.topnavbar label:hover{
+		background-color:#EED6D6;
+		color:#ffffff;
+		transition: 0.3s ease;
+	}
+
 
 /* Footer */
 
 	#footer {
+		font-family:"NotoSansCJKkr-Thin";
 		text-align: center;
 		padding: 4em 0 4em 0;
 	}
 
 		#footer:before {
 			content: '';
-			border-top: solid 1px rgba(255, 255, 255, 0.25);
+			border-top: solid 5px rgba(0, 0, 0, 1);
 			width: 10em;
-			display: block;
+			display: none;
 			margin: 0 auto 3em auto;
+			
 		}
 
 		@media screen and (max-width: 1280px) {
@@ -2636,3 +2762,18 @@
 			}
 
 		}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
