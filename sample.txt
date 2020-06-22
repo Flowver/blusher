@@ -1,0 +1,17 @@
+
+<html lang="ko">
+<head></head>
+<body>
+<div id="oblush" class="orange bgblush"></div>
+	
+	$("#oblush").animate(
+			{left: "-320",top: "-170",
+			width: "1120px",
+			height: "1370px"
+			 }, 2000, function() {
+            $( this ).animate( {
+              width: '0%', height: '0%'
+            }, 0 );
+			});
+</body>			
+</html>

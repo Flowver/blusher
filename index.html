@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<title>BLUSHER</title>
+	<meta charset="UTF-8">
+	<link rel="shortcut icon" href="images/pav_blush.ico">
+	<link rel="icon" href="images/pav_blush.ico">
+	<link rel="stylesheet" href="css/web.css" />
+	<link rel="stylesheet" href="css/layout_font.css" />
+	<link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+	<link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+	
+	<!--Javascript Libraries-->
+	<script src="js/jquery-3.5.1.min.js"></script>
+	<script type="text/javascript" src="slick/slick.min.js"></script>
+</head>
+<body id="bgGround">
+<!--Header -->
+	<div id="wrapper">
+		<header>
+			<a href="index.html"><div type="img" class="logo fadein"></div></a>
+			<!--Top Navigation -->		
+			<div class="topnavbar">
+				<input type="checkbox" id="menu-icon-input">
+				<label id="menu-icon" for="menu-icon-input">&#9776;</label>
+				<div class="nav-items fadein">
+					<ul>
+						<li><a class="active" href="#">홈</a></li>
+						<li><a href="#">웹툰</a></li>
+						<li><a href="#">만화</a></li>
+						<li><a href="#">소설</a></li>
+						<li><a href="#">BL</a></li>
+						<li><a href="./menu/register.html">로그인/회원가입</a></li>
+					 </ul>
+				 </div>
+			</div>
+		</header>
+		
+		<!-- Aside -->
+		<aside>
+			<div class='bn-controller'>
+				<div id="pblush" class="pink bgblush"></div>
+				<button id="pink" class='pink button fadein' onclick="page_1();imgChange();">
+				<img src="images/up-crop2.png" alt="up"></button>
+				
+				<div id="oblush" class="orange bgblush"></div>
+				<button id="orange" class='orange button fadein' onclick="page_2();imgChange2();">
+				<img src="images/up-crop2.png" alt="up"></button>
+				
+				<div id="gblush" class="green bgblush"></div>
+				<button id="green" class='green button fadein' onclick="page_3();imgChange3();">
+				<img src="images/down-crop2.png" alt="up"></button>		
+			</div>
+			
+			<!-- Image Slide  -->
+			<div class="fade">
+				<img src="images/mouse.png" alt="이미지1">
+				<img src="images/flower2.jpg" alt="이미지2">
+				<img src="images/flower3.jpg" alt="이미지3">
+			</div>
+		</aside>
+	
+		<!-- Section -->
+		<section>
+			<div id="title" class="boxh1 fadein"><p>디즈니-미키마우스: 공연은 즐거워</p></div>
+			<div id="content" class="boxh3 fadein"><p>미키는 월트 디즈니가 제작했던 애니메이션 '토끼 오스왈드'의 판권을 잃었기 때문에 오스왈드를 대신하여 만들어진 캐릭터이다. </br></br>
+'월트 디즈니가 집에서 먹이를 찾아다니는 생쥐를 보고 미키를 고안했다'라는 이야기는 사실이 아니다. </br>디즈니는 굳이 말하자면 프로듀서였고 애니메이터가 아니었다.</br>
+오스왈드를 기초로 하여 어브 아이웍스가 디자인했다.</br> 데뷔작인 증기선 윌리 이후 애니메이션이 시리즈화되어 미키는 인기를 얻게 되었다. </br></br>
+데뷔 당시의 미키는 지금에 비해 성격이 급하고 폭력적이었으나 영화를 본 아이들의 부모로부터 항의를 받은 뒤 지금의 성격으로 바뀌게 되었다. </br>
+이 캐릭터성은 현재의 도널드 덕에게 옮겨갔다고도 할 수 있다. </br>
+월트 디즈니는 원래 그를 모티머 마우스라고 이름붙이려 했으나, 그의 부인 릴리언에 의해 '미키 마우스'라는 이름을 얻게 된다. </br>
+후에 모티머 마우스는 미키의 여자친구인 미니 마우스의 부자 삼촌, 미니를 사이에 둔 사랑의 라이벌의 이름으로 사용된다.</p></div>
+		</section>
+		<!-- Footer -->
+		<footer>
+			<div id="footer">
+				<p>&copy Copyright 2020. 이재원. All rights reserved. Contact: <a href="sis04263@gmail.com">Mail</a></p>
+			</div>
+		</footer>
+	</div>
+	<!-- Script -->
+	<script type="text/javascript">
+	$(document).ready(function() {
+		$('.fade').slick({
+			autoplay : false,
+			dots : true, /* 하단 점 버튼 */
+			speed : 400 /* 이미지가 슬라이딩시 걸리는 시간 */,
+			infinite : true,
+			autoplaySpeed : 30000 /* 이미지가 다른 이미지로 넘어 갈때의 텀 */,
+			arrows : false,
+			slidesToShow : 1,
+			slidesToScroll : 1,
+			touchMove : false, /* 마우스 클릭으로 끌어서 슬라이딩 가능여부 */
+			nextArrows : false, /* 넥스트버튼 */
+			draggable : false,
+			/* prevArrows : true,
+			arrow : true, */
+			fade : true
+		});
+	});
+	</script>
+	<!-- 트랜지션 버튼에 의한 이미지 변경 -->
+	<script>
+	function page_1(){
+		$('.fade').slick('slickGoTo', 0);
+	}
+	function page_2(){
+		$('.fade').slick('slickGoTo', 1);
+	}
+	function page_3(){
+		$('.fade').slick('slickGoTo', 2);
+	}
+	</script>
+	<script>
+	var fileNm=['images/bg_pink-down.png', 'images/bg_yellow-down.png','images/bg_green-down.png'];
+	function imgChange(){
+		var pink="url(" + fileNm[0] + ")";
+		var orange="url(" + fileNm[1] + ")";
+		var green="url(" + fileNm[2] + ")";
+		document.getElementById("bgGround").style.backgroundImage=pink;};
+		setTimeout(function() {document.getElementById("bgGround").
+		style.backgroundImage=pink;},700)
+		/*
+		if($("button").hasClass("pink"){
+			document.getElementById("bgGround").style.backgroundImage=pink;}
+		if($("button").hasClass("orange"){
+			document.getElementById("bgGround").style.backgroundImage=orange;}
+		if($("button").hasClass("green"){
+			document.getElementById("bgGround").style.backgroundImage=green;}
+		*/
+	function imgChange2(){
+		var orange="url(" + fileNm[1] + ")";
+		setTimeout(function() {document.getElementById("bgGround").
+		style.backgroundImage=orange;},700)
+		}
+	function imgChange3(){
+		var green="url(" + fileNm[2] + ")";
+		setTimeout(function() {document.getElementById("bgGround").
+		style.backgroundImage=green;},700)
+		}
+	</script>
+	<!--컨텐츠 변경 스크립트-->
+	<script type="text/javascript">
+	var title = document.getElementById( 'title' );
+	var content = document.getElementById( 'content' );
+	$(document).ready(function(){
+	$("#orange").click(function(){
+		/* $("#oblush").filter(":not(:animated)") */
+		$("#oblush").animate(
+			{left: "-320",top: "-170",
+			width: "1120px",
+			height: "1370px"
+			 }, 0/*, function() {
+            $( this ).animate( {
+              width: '0%', height: '0%'
+            }, 0 */);
+		$("#title, #content").hide();
+		$("#title, #content").fadeIn(2000);
+		$("#title").text("오렌지!");
+		$("#content").text("오렌지!");
+		}); 
+	$("#pink").click(function(){
+		$("#pblush").filter(":not(:animated)")
+		.animate(
+			{left: "-320",top: "-170",
+			width: "1120px",
+			height: "1370px"
+			 }, 0,"easeout");
+		$("#title, #content").hide();
+		$("#title, #content").fadeIn(2000);
+		$("#title").text("핑크!");
+		$("#content").text("핑크!");
+		});
+	$("#green").click(function(){
+		$("#gblush").filter(":not(:animated)")
+		.animate(
+			{left: "-320",top: "-170",
+			width: "1120px",
+			height: "1370px"
+			 }, 0,"easeout");
+		$("#title, #content").hide();
+		$("#title, #content").fadeIn(2000);
+		$("#title").text("그린!");
+		$("#content").text("그린!");
+		});
+	});
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
