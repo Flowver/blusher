@@ -1,51 +1,42 @@
-html, body * { box-sizing: border-box; font-family: 'Open Sans', sans-serif; }
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;400;700&display=swap');
 
-body {
-  background:
-    -webkit-gradient(
-    linear,
-    left top, left bottom,
-    from(rgba(246,247,249,1)),
-    to(rgba(246,247,249,1))),
-    url(images/flower_cont.jpg) no-repeat center center fixed;
-  background:
-    linear-gradient(
-    rgba(246,247,249,0.8),
-    rgba(246,247,249,0.8)),
-    url(images/flower_cont.jpg) no-repeat center center fixed;
-  background-size: cover;
-}
+html, body * { box-sizing: border-box; font-family: 'Noto Sans KR', 'Open Sans', sans-serif; }
 
+/* background */
+
+
+/* main */
 .container {
   width: 100%;
-  padding-top: 60px;
+  padding-top: 170px;
   padding-bottom: 100px;
 }
 
 .frame {
-  height: 575px;
-  width: 430px;
+  width: 450px;
+  height: 500px;
   background:
     -webkit-gradient(
     linear,
     left top, left bottom,
-    from(rgba(35,43,85,0.75)),
-    to(rgba(35,43,85,0.95))),
-    url(https://dl.dropboxusercontent.com/u/22006283/preview/codepen/clouds-cloudy-forest-mountain.jpg) no-repeat center center;
+    from(rgba(255,43,85,0.5)),
+    to(rgba(50,0,0,0.1))),
+    url(../images/blush.jpg) no-repeat center center;
   background:
     linear-gradient(
-    rgba(35,43,85,0.75),
-    rgba(35,43,85,0.95)),
-    url(https://dl.dropboxusercontent.com/u/22006283/preview/codepen/clouds-cloudy-forest-mountain.jpg) no-repeat center center;
+    rgba(255,43,85,0.5),
+    rgba(50,0,0,0.1)),
+    url(../images/blush.jpg) no-repeat center center;
   background-size: cover;
   margin-left: auto;
   margin-right: auto;
   border-top: solid 1px rgba(255,255,255,.5);
   border-radius: 5px;
-  box-shadow: 0px 2px 7px rgba(0,0,0,0.2);
+  box-shadow: 0px 2px 7px rgba(0,0,0,0.3);
   overflow: hidden;
   -webkit-transition: all .5s ease;
   transition: all .5s ease;
+  z-index: 1;
 }
 
 .frame-long {
@@ -87,7 +78,7 @@ li {
   padding-bottom: 10px;
   color: #ffffff;
   text-decoration: none;
-  border-bottom: solid 2px #1059FF;
+  border-bottom: solid 2px #ffffff;
   -webkit-transition: all .25s ease;
   transition: all .25s ease;
   cursor: pointer;
@@ -105,7 +96,7 @@ li {
   cursor: pointer;
   color: #ffffff;
   text-decoration: none;
-  border-bottom: solid 2px #1059FF;
+  border-bottom: solid 1px #ffffff;
   padding-bottom: 10px;
 }
 
@@ -339,7 +330,6 @@ label {
   font-size: 13px;
   text-align: center;
   color: #ffffff;
-  padding-top: 8px;
   width: 100%;
   height: 35px;
 	border: none;
@@ -350,49 +340,15 @@ label {
 
 .btn-signin {
   float: left;
-  padding-top: 8px;
   width: 100%;
   height: 35px;
 	border: none;
 	border-radius: 20px;
-  margin-top: -8px;
+  margin-top: 0px;
 }
 
-.btn-animate {
-  float: left;
-  font-weight: 700;
-  text-transform: uppercase;
-  font-size: 13px;
-  text-align: center;
-  color: rgba(255,255,255, 1);
-  padding-top: 8px;
-  width: 100%;
-  height: 35px;
-	border: none;
-	border-radius: 20px;
-  margin-top: 23px;
-  background-color: rgba(16,89,255, 1);
-  left: 0px;
-  top: 0px;
-  -webkit-transition: all .5s ease, top .5s ease .5s, height .5s ease .5s, background-color .5s ease .75s;
-  transition: all .5s ease, top .5s ease .5s, height .5s ease .5s, background-color .5s ease .75s; 
-}
-
-.btn-animate-grow {
-  width: 130%;
-  height: 625px;
-  position: relative;
-  left: -55px;
-  top: -420px;
-  color: rgba(255,255,255,0);
-  background-color: rgba(255,255,255,1);
-}
-
-a.btn-signup:hover, a.btn-signin:hover {
-    cursor: pointer; 
-    background-color: #0F4FE6;
-    -webkit-transition: background-color .5s;
-    transition: background-color .5s; 
+.btn-signin:hover {
+  background-color: #ffffff;
 }
 
 .forgot {
@@ -498,69 +454,28 @@ h1 {
   text-align: center;
 }
 
-.btn-goback {
-  position: relative;
-  margin-right: auto;
-  top: -400px;
-  float: left;
-  padding: 8px;
-  width: 83%;
-  margin-left: 37px;
-  margin-right: 37px;
-  height: 35px;
-	border-radius: 20px;
-  font-weight: 700;
-  text-transform: uppercase;
-  font-size: 13px;
-  text-align: center;
-  color: #1059FF;
-  margin-top: -8px;
-  border: solid 1px #1059FF;
-  opacity: 0;
-  -webkit-transition: top 1.5s ease 0.35s, opacity .75s ease .5s;
-  transition: top 1.5s ease 0.35s, opacity .75s ease .5s;
+/* 페이드인 효과 */
+.fadein {
+    animation: fadein 2.5s ease-out forwards;
 }
 
-.btn-goback-up {
-  top: -1080px;
-  opacity: 1;
+@keyframes fadein {
+	from {
+		opacity:0;
+	}
+	to {
+		opacity:1;
+	}
 }
 
-a.btn-goback:hover {
-    cursor: pointer; 
-    background-color: #0F4FE6;
-    -webkit-transition: all .5s;
-    transition: all .5s; 
-    color: #ffffff;
+.fadeout {
+    animation: fadeout 2.5s ease-out forwards;
 }
-
-/* refresh button styling */
-
-#refresh {
-    position: fixed;
-    bottom: 20px;
-    right: 20px; 
-    background-color: #ffffff;
-    width: 50px;
-    height: 50px;
-    border-radius: 25px;
-    box-shadow: 0px 2px 7px rgba(0,0,0,0.1);
-    padding: 13px 0 0 13px;
-}
-
-.refreshicon {
-    fill: #d3d3d3;
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-    -webkit-transition: fill .25s ease, -webkit-transform .25s ease;
-    transition: fill .25s ease, -webkit-transform .25s ease;
-    transition: fill .25s ease, transform .25s ease;
-    transition: fill .25s ease, transform .25s ease, -webkit-transform .25s ease;
-}
-
-.refreshicon:hover {
-  cursor: pointer;
-  fill: #1059FF;
-  -webkit-transform: rotate(180deg);
-          transform: rotate(180deg);
+@keyframes fadeout {
+	from {
+		opacity:1;
+	}
+	to {
+		opacity:0;
+	}
 }

@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-	<title>BLUSHER</title>
+	<title id="titleCheck">BLUSHER</title>
 	<meta charset="UTF-8">
 	<link rel="shortcut icon" href="images/pav_blush.ico">
 	<link rel="icon" href="images/pav_blush.ico">
 	<link rel="stylesheet" href="css/web.css" />
-	<link rel="stylesheet" href="css/layout_font.css" />
+	<link rel="stylesheet" href="css/bird.css" />
+	<link rel="stylesheet" href="css/font-awesome.min.css" />
 	<link rel="stylesheet" type="text/css" href="slick/slick.css"/>
 	<link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
 	
@@ -15,25 +16,57 @@
 	<script type="text/javascript" src="slick/slick.min.js"></script>
 </head>
 <body id="bgGround">
+
+	<!--bird-->
+		<div class="bird-container bird-container--one">
+			<div class="bird bird--one"></div>
+		</div>
+		
+		<div class="bird-container bird-container--two">
+			<div class="bird bird--two"></div>
+		</div>
+		
+		<div class="bird-container bird-container--three">
+			<div class="bird bird--three"></div>
+		</div>
+		
+		<div class="bird-container bird-container--four">
+			<div class="bird bird--four"></div>
+		</div>
+	
 <!--Header -->
+
+	<script>
+		$(function() {
+			$(".toggle").on("click", function() {
+				if ($(".item").hasClass("active")) {
+					$(".item").removeClass("active");
+					$(this).find("a").html("<i class='fa fa-bars'></i>");
+				} else {
+					$(".item").addClass("active");
+					$(this).find("a").html("<i class='fa fa-times'></i>");
+				}
+			});
+		});
+	</script>
 	<div id="wrapper">
 		<header>
-			<a href="index.html"><div type="img" class="logo fadein"></div></a>
+			<!-- <a href="index.html"><div type="img" class="logo fadein"></div></a> -->
 			<!--Top Navigation -->		
-			<div class="topnavbar">
-				<input type="checkbox" id="menu-icon-input">
-				<label id="menu-icon" for="menu-icon-input">&#9776;</label>
-				<div class="nav-items fadein">
-					<ul>
-						<li><a class="active" href="index.html">홈</a></li>
-						<li><a href="webtoon.html">웹툰</a></li>
-						<li><a href="webtoon.html">만화</a></li>
-						<li><a href="#">소설</a></li>
-						<li><a href="#">BL</a></li>
-						<li><a href="./menu/register.html">로그인/회원가입</a></li>
-					 </ul>
-				 </div>
-			</div>
+				<nav id="topnav">
+					<ul class="menu fadein">
+						<div class="logo"><a href="index.html"></a></div>
+						<li class="item active"><a href="index.html">홈</a></li>
+						<li class="item"><a href="#">Blusher</a></li>
+						<li class="item"><a href="webtoon.html">웹툰/만화</a></li>
+						<li class="item"><a href="#">소설</a></li>
+						<li class="item"><a href="#">BL</a></li>
+						<li class="item"><a href="guestbook.html">방명록</a></li>
+						<div class="item button"><a id="loginmenu" href="login.html">로그인</a></div>
+						<div class="item button secondary"><a id="joinmenu" href="join.html">가입</a></div>
+						<div class="toggle"><a href="#"><i class="fa fa-bars"></i></a></div>
+					</ul>
+				</nav>
 		</header>
 		
 		<!-- Aside -->
@@ -45,11 +78,11 @@
 				
 				<div id="oblush" class="orange bgblush"></div>
 				<button id="orange" class='orange button fadein' onclick="page_2();imgChange2();">
-				<img src="images/up-crop2.png" alt="up"></button>
+				<img src="images/down-crop2.png" alt="up"></button>
 				
 				<div id="gblush" class="green bgblush"></div>
 				<button id="green" class='green button fadein' onclick="page_3();imgChange3();">
-				<img src="images/down-crop2.png" alt="up"></button>		
+				<img src="images/up-crop2.png" alt="up"></button>		
 			</div>
 			
 			<!-- Image Slide  -->
@@ -66,15 +99,14 @@
 			<div id="content" class="boxh3 fadein"><p>미키는 월트 디즈니가 제작했던 애니메이션 '토끼 오스왈드'의 판권을 잃었기 때문에 오스왈드를 대신하여 만들어진 캐릭터이다. </br></br>
 '월트 디즈니가 집에서 먹이를 찾아다니는 생쥐를 보고 미키를 고안했다'라는 이야기는 사실이 아니다. </br>디즈니는 굳이 말하자면 프로듀서였고 애니메이터가 아니었다.</br>
 오스왈드를 기초로 하여 어브 아이웍스가 디자인했다.</br> 데뷔작인 증기선 윌리 이후 애니메이션이 시리즈화되어 미키는 인기를 얻게 되었다. </br></br>
-데뷔 당시의 미키는 지금에 비해 성격이 급하고 폭력적이었으나 영화를 본 아이들의 부모로부터 항의를 받은 뒤 지금의 성격으로 바뀌게 되었다. </br>
-이 캐릭터성은 현재의 도널드 덕에게 옮겨갔다고도 할 수 있다. </br>
-월트 디즈니는 원래 그를 모티머 마우스라고 이름붙이려 했으나, 그의 부인 릴리언에 의해 '미키 마우스'라는 이름을 얻게 된다. </br>
-후에 모티머 마우스는 미키의 여자친구인 미니 마우스의 부자 삼촌, 미니를 사이에 둔 사랑의 라이벌의 이름으로 사용된다.</p></div>
+데뷔 당시의 미키는 지금에 비해 성격이 급하고 폭력적이었으나 영화를 본 아이들의 부모로부터 항의를 받은 뒤 지금의 성격으로 바뀌게 되었다. </br></p></div>
+			  
+			  
 		</section>
 		<!-- Footer -->
 		<footer>
 			<div id="footer">
-				<p>&copy Copyright 2020. 이재원. All rights reserved. Contact: <a href="sis04263@gmail.com">Mail</a></p>
+				<p>&copy Copyright 2020. 이재원. All rights reserved.></p>
 			</div>
 		</footer>
 	</div>
@@ -84,7 +116,7 @@
 		$('.fade').slick({
 			autoplay : false,
 			dots : true, /* 하단 점 버튼 */
-			speed : 400 /* 이미지가 슬라이딩시 걸리는 시간 */,
+			speed : 1000 /* 이미지가 슬라이딩시 걸리는 시간 */,
 			infinite : true,
 			autoplaySpeed : 30000 /* 이미지가 다른 이미지로 넘어 갈때의 텀 */,
 			arrows : false,
@@ -117,9 +149,13 @@
 		var pink="url(" + fileNm[0] + ")";
 		var orange="url(" + fileNm[1] + ")";
 		var green="url(" + fileNm[2] + ")";
-		document.getElementById("bgGround").style.backgroundImage=pink;};
 		setTimeout(function() {document.getElementById("bgGround").
+		document.getElementById("bgGround").style.backgroundImage=pink;
 		style.backgroundImage=pink;},700)
+
+		document.getElementById("bgGround").style.zIndex = 0;
+		};
+		
 		/*
 		if($("button").hasClass("pink"){
 			document.getElementById("bgGround").style.backgroundImage=pink;}
@@ -132,17 +168,26 @@
 		var orange="url(" + fileNm[1] + ")";
 		setTimeout(function() {document.getElementById("bgGround").
 		style.backgroundImage=orange;},700)
+
+		document.getElementById("bgGround").style.zIndex = 0;
 		}
 	function imgChange3(){
 		var green="url(" + fileNm[2] + ")";
 		setTimeout(function() {document.getElementById("bgGround").
 		style.backgroundImage=green;},700)
+
+		document.getElementById("bgGround").style.zIndex = 0;
 		}
 	</script>
+	
+
 	<!--컨텐츠 변경 스크립트-->
 	<script type="text/javascript">
 	var title = document.getElementById( 'title' );
 	var content = document.getElementById( 'content' );
+	
+	$('#pink').hide();
+
 	$(document).ready(function(){
 	$("#orange").click(function(){
 		/* $("#oblush").filter(":not(:animated)") */
@@ -153,12 +198,21 @@
 			 }, 0/*, function() {
             $( this ).animate( {
               width: '0%', height: '0%'
-            }, 0 */);
+			}, 0 */);
+		
+		$(this).hide();
+		if ($('#pink').css(display == none)) {
+			$('#pink').toggle();
+           }
+		if ($('#green').css(display == none)) {
+			$('#green').toggle();
+		}
 		$("#title, #content").hide();
 		$("#title, #content").fadeIn(2000);
 		$("#title").text("오렌지!");
 		$("#content").text("오렌지!");
 		}); 
+
 	$("#pink").click(function(){
 		$("#pblush").filter(":not(:animated)")
 		.animate(
@@ -166,11 +220,21 @@
 			width: "1120px",
 			height: "1370px"
 			 }, 0,"easeout");
+		
+		$(this).hide();
+		if ($('#orange').css(display == none)) {
+			$('#orange').toggle();
+           }
+		if ($('#green').css(display == none)) {
+			$('#green').toggle();
+		}
+
 		$("#title, #content").hide();
 		$("#title, #content").fadeIn(2000);
 		$("#title").text("핑크!");
 		$("#content").text("핑크!");
 		});
+
 	$("#green").click(function(){
 		$("#gblush").filter(":not(:animated)")
 		.animate(
@@ -178,6 +242,16 @@
 			width: "1120px",
 			height: "1370px"
 			 }, 0,"easeout");
+		
+
+		$(this).hide();
+		if ($('#orange').css(display == none)) {
+			$('#orange').toggle();
+		}
+		if ($('#pink').css(display == none)) {
+			$('#pink').toggle();
+		}	
+
 		$("#title, #content").hide();
 		$("#title, #content").fadeIn(2000);
 		$("#title").text("그린!");
@@ -185,6 +259,75 @@
 		});
 	});
 	</script>
+	
+	
+<!-- 파이어베이스 데이터베이스 -->
+<script src="https://www.gstatic.com/firebasejs/7.15.4/firebase.js"></script>
+	<script>
+    var firebaseEmailAuth; //파이어베이스 email 인증 모듈 전역변수
+    var firebaseDatabase; //파이어베이스 db 모듈 전역변수
+    var name; //유저 이름
+    var loginUserKey; //로그인한 유저의 부모 key
+    var userInfo; //로그인한 유저의 정보 object type
+
+    //파이어 베이스 초기화 코드
+	var config = {
+		apiKey: "AIzaSyAVOIF29TmYY79IOdS7aFkuHUtmdHH8ydA",
+		authDomain: "blusherx.firebaseapp.com",
+		databaseURL: "https://blusherx.firebaseio.com",
+		projectId: "blusherx",
+		storageBucket: "blusherx.appspot.com",
+		messagingSenderId: "602295468180",
+		appId: "1:602295468180:web:865441fa8a8442739a7481",
+		measurementId: "G-BKQCDXF778"
+	};
+
+	//파이어베이스 초기화
+	firebase.initializeApp(config);
+    //인증모듈 객체 가져오기
+    firebaseEmailAuth = firebase.auth();
+    //데이터베이스 모듈객체 가져오기
+    firebaseDatabase = firebase.database();
+    
+    //세션 체크 함수
+    userSessionCheck();
+
+
+    //유저가 로그인 했는지 안했는지 확인해주는 함수
+    function userSessionCheck() {
+      
+      //로그인이 되어있으면 - 유저가 있으면, user를 인자값으로 넘겨준다.
+      firebaseEmailAuth.onAuthStateChanged(function (user) {
+        
+        if (user) {
+          //조회 - 데이터 베이스에 저장된 닉네임을 현재 접속되어 있는 user의 pk key 값을 이용해서 가져오기
+          firebaseDatabase.ref("users/" + user.uid).once('value').then(function (snapshot) {
+            
+            //자바스크립트 dom 선택자를 통해서 네비게이션 메뉴의 엘리먼트 변경해주기
+            document.getElementById("loginmenu").textContent = "로그아웃";
+            document.getElementById("loginmenu").href = "/logout.html";
+            document.getElementById("joinmenu").textContent = "반가워요! " + snapshot.val().name + " 님";
+            document.getElementById("joinmenu").href = "/mypage.html";
+
+            name = snapshot.val().name;   //유저 닉네임은 계속 쓸거기 때문에 전역변수로 할당
+            loginUserKey = snapshot.key;  //로그인한 유저의 key도 계속 쓸 것이기 때문에 전역변수로 할당
+            userInfo = snapshot.val(); //snapshot.val()에 user 테이블에 있는 해당 개체 정보가 넘어온다. userInfo에 대입!
+            
+
+            //alert(userInfo.userid);  //uid는 db에서 user 테이블의 각 개체들의 pk 인데, 이 값은 인증에서 생성된 아이디의 pk 값과 같다. *중요!
+
+            return true
+          });
+
+        } else {
+                $('#comment').val("로그인 하시면 사람들의 방명록을 보실 수 있습니다.");
+          return false
+        }
+      });
+    }
+
+	</script>
+	
 </body>
 </html>
 
