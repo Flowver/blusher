@@ -12,7 +12,6 @@
 }
 
 *{
-	box-string: border-box;
 	margin:0; padding: 0;
 }
 *:after,
@@ -155,7 +154,7 @@ header{
 		list-style-type: none;
 	}
 	a {
-		color: #808080;
+		color: #9b9b9b;
     	text-decoration: none;
     	-moz-transition: color 0.2s ease-in-out;
 		-webkit-transition: color 0.2s ease-in-out;
@@ -168,10 +167,10 @@ header{
 		transition: 0.3s ease;
 	}
 	.logo{
-		width: 250px; height: 70px;
-		background: url("../images/logo-crop.png") no-repeat;
+		height: 65px;
+		background: url("../images/logo/logo-horizontal.png") no-repeat;
 		background-size: contain;
-		margin-top:5px;
+		margin:0px;
 		float: left;
 	}
 	
@@ -183,16 +182,10 @@ header{
     	font-family:'Noto Sans KR', sans-serif;
 		letter-spacing: -1.5px;	
 		font-size: 22px;
-		font-weight: 500;
+		font-weight: 550;
 		margin:0px;
 		padding: 15px 10px;
 		white-space: wrap;
-	}
-	.menu li:hover{
-		background-color:#ffffff;
-	}
-	.menu li.active{
-		background-color:#ffffff;
 	}
 
 	.item.button {
@@ -235,6 +228,9 @@ header{
 	.item.active {
 		display: block;
   }
+	.menu li.act{
+		background-color:none;
+	}
   
 /* Tablet */
 @media all and (min-width: 600px) {
@@ -282,7 +278,7 @@ header{
 	}
 }
 /* Desktop */
-@media all and (min-width: 1600px) {
+@media all and (min-width: 1500px) {
 	.item {
 		display: block;
 		width: auto;
@@ -300,10 +296,19 @@ header{
 		order: 2;
 	}
 	.menu li {
-		padding: 25px 70px;
+		padding: 25px 60px;
 	}
 	.menu li.button {
 		padding-right: 0;
+	}
+	.menu li:hover{
+		background-color:#fff;
+		transition: 0.3s ease;
+	}
+	.menu li.act{
+		background-color:#ffffff;
+		transition: 0.3s ease;
+		color:black;
 	}
 }
 
@@ -490,11 +495,6 @@ div.bn-controller .button:focus:after {
 
 .clearfix {
     *zoom: 1;
-}
-
-a {
-	color: #555;
-	text-decoration: none;
 }
 
 .container {
